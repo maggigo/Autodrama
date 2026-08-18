@@ -1,0 +1,17 @@
+{
+  "name": "Autodrama Codespace",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "docker-compose.yml"
+  ],
+  "service": "workspace",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [3000],
+  "postCreateCommand": "npm install",
+  "postStartCommand": "echo 'Codespace started. Run \"npm run dev\" to start the app.'",
+  "remoteUser": "node",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  }
+}
