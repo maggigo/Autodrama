@@ -1,14 +1,4 @@
-version: '3.8'
-services:
-  workspace:
-    image: mcr.microsoft.com/devcontainers/javascript-node:0-20
-    command: sleep infinity
-    volumes:
-      - ..:/workspace:cached
-    working_dir: /workspace
-    env_file:
-      - ../.env
-    ports:
-      - "3000:3000"
-    depends_on:
-      - mongo
+# This file is intentionally minimal. The Codespace devcontainer uses a single-container devcontainer.json
+# which runs the official NodeJS devcontainer image. MongoDB is started from inside the devcontainer via
+# the postStartCommand using the top-level docker-compose.yml in the repository.
+# Keeping this file here avoids interfering with the devcontainer CLI's compose merge steps.

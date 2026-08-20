@@ -1,16 +1,12 @@
 {
   "name": "Autodrama Codespace",
-  "dockerComposeFile": [
-    "../docker-compose.yml",
-    "docker-compose.yml"
-  ],
-  "service": "workspace",
-  "workspaceFolder": "/workspace",
-  "shutdownAction": "stopCompose",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20",
+  "workspaceFolder": "/workspace/Autodrama",
+  "remoteUser": "node",
   "forwardPorts": [3000],
   "postCreateCommand": "npm install",
-  "postStartCommand": "echo 'Codespace started. Run \"npm run dev\" to start the app.'",
-  "remoteUser": "node",
+  "postStartCommand": "docker-compose -f docker-compose.yml up -d mongo || true",
+  "shutdownAction": "none",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
   }
