@@ -12,14 +12,13 @@ Run locally (development):
 
    docker-compose up -d
 
-3. Create a .env file at the project root with:
+3. Create a .env file at the project root with (for local use only):
 
-   MONGODB_URI=mongodb://localhost:27017/autodrama
-   JWT_SECRET=change_this_to_a_random_string
+   Copy .env.example to .env and edit values as needed. We no longer commit a .env file to the repository.
 
 4. Seed the database (dev route):
 
-   Start the dev server (npm run dev) and visit http://localhost:3000/api/seed
+   Start the dev server (npm run dev) and POST to http://localhost:3000/api/seed to populate sample data (dev-only).
 
 5. Run dev server:
 
@@ -27,4 +26,4 @@ Run locally (development):
 
 Notes:
 - This is a prototype scaffold. It includes core Mongoose models derived from your MD files and basic credential-based auth (hashed passwords + JWT cookie).
-- I will iterate on models and API after you review.
+- The repository contains an .env.example file — please create a private .env locally or in your Codespace if you need to override values. Do NOT commit secrets to the repo.
